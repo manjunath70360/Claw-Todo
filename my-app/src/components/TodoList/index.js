@@ -17,7 +17,7 @@ const TodoList = () => {
 
   const fetchTodos = async (token) => {
     try {
-      const response = await axios.get('http://localhost:3000/api/todos', {
+      const response = await axios.get('https://claw-todo.onrender.com/api/todos', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -36,7 +36,7 @@ const TodoList = () => {
     const token = Cookies.get('token');
 
     try {
-      await axios.put(`http://localhost:3000/api/todos/${id}`, updatedTodo, {
+      await axios.put(`https://claw-todo.onrender.com/api/todos/${id}`, updatedTodo, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -51,7 +51,7 @@ const TodoList = () => {
     const token = Cookies.get('token');
 
     try {
-      await axios.delete(`http://localhost:3000/api/todos/${id}`, {
+      await axios.delete(`https://claw-todo.onrender.com/api/todos/${id}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
