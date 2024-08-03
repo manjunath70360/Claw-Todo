@@ -22,14 +22,14 @@ const Home = ({ onTodoAdded }) => {
     };
 
     try {
-      await axios.post('http://localhost:3000/api/todos', newTodo, {
+      await axios.post('https://claw-todo.onrender.com/api/todos', newTodo, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
       });
       setTextInput('');
       toast.success('Added Successfully');
-      if (onTodoAdded) onTodoAdded(); // Notify parent component
+      if (onTodoAdded) onTodoAdded(); 
     } catch (error) {
       console.error('Error adding todo:', error);
       toast.error('Error adding todo');
